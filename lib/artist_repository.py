@@ -17,3 +17,8 @@ class ArtistRepository:
             [artist.name, artist.genre]
             )
         return None
+    
+    def find(self, id):
+        row = self._connection.execute("SELECT * FROM artist WHERE id = %s", [id]
+        )
+        return Artist(row["id"], row["name"], row["genre"])

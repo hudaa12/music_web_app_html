@@ -17,3 +17,9 @@ class AlbumRepository:
             [album.title, album.release_year, album.artist_id]
             )
         return None
+    
+
+    def find(self, id):
+        row = self._connection.execute("SELECT * FROM albums WHERE id = %s", [id]
+        )
+        return Album(row["id"], row["title"], row["release_year"], row["artist_id"])
