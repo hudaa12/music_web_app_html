@@ -7,7 +7,7 @@ We get a list of Artists objects reflecting the seed data
 """
 
 def test_get_all_artists(db_connection):
-    db_connection.seed("seeds/artists.sql")
+    db_connection.seed("seeds/music_library.sql")
     repository = ArtistRepository(db_connection)
 
     artists = repository.all()
@@ -21,7 +21,7 @@ def test_get_all_artists(db_connection):
         ]
 
 def test_create(db_connection):
-    db_connection.seed("seeds/artists.sql")
+    db_connection.seed("seeds/music_library.sql")
     repository = ArtistRepository(db_connection)
     artist = Artist(None, "Wild nothing", "Indie")
     repository.create(artist)

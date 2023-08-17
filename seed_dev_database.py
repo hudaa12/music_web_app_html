@@ -4,6 +4,6 @@ from lib.database_connection import DatabaseConnection
 # ; pipenv run python seed_dev_database.py
 
 connection = DatabaseConnection(test_mode=False)
-connection.connect()
+connection.connect('seeds/music_library.sql')
 # Add your own seed lines below...
 # E.g.connection.seed("seeds/your_seed.sql")
