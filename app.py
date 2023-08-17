@@ -16,7 +16,7 @@ def get_albums():
     albums = repository.all()
     return render_template("albums.html", albums=albums)
 
-@app.route("/albums_id")
+@app.route("/albums/<id>")
 def get_single_albums(id):
     connection = get_flask_database_connection(app)
     repository = AlbumRepository(connection)
