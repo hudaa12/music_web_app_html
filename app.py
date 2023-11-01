@@ -23,7 +23,7 @@ def get_single_albums(id):
     artist_repository = ArtistRepository(connection)
     album = repository.find(id)
     artist = artist_repository.find(album.artist_id)
-    return render_template("single_albums.html", album=album, artist=artist)
+    return render_template("single_albums.html", album=album)
 
 # These lines start the server if you run this file directly
 # They also start the server configured to use the test database
